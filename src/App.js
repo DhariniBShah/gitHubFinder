@@ -15,11 +15,14 @@ class App extends Component {
 	};
 
 	clearUsers = () => {
-		this.setState({ users: [], loading: false, alert: null });
+		this.setState({ users: [], loading: false });
 	};
 
 	setAlert = (message, type) => {
 		this.setState({ alert: { message, type } });
+		setTimeout(() => {
+			this.setState({ alert: null });
+		}, 3000);
 	};
 
 	searchUsers = async (text) => {
@@ -32,7 +35,7 @@ class App extends Component {
 			&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}
 			&per_page=99`
 		);
-		this.setState({ users: res.data.items, loading: false, alert: null });
+		this.setState({ users: res.data.items, loading: false });
 	};
 
 	render() {

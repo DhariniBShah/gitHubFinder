@@ -39,7 +39,7 @@ class Search extends Component {
 					<input
 						type='text'
 						name='text'
-						placeholder='Enter Github Username..'
+						placeholder='Search..'
 						style={{ display: 'flex-start' }}
 						value={this.state.text}
 						onChange={this.onChange}
