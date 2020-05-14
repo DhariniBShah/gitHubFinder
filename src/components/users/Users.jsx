@@ -2,6 +2,7 @@ import React from 'react';
 import UserItem from './UserItem';
 import Spinner from '../layout/Spinner';
 import propTypes from 'prop-types';
+import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 const Users = ({ users, loading }) => {
 	if (loading) return <Spinner />;

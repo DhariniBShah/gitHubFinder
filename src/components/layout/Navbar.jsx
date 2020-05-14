@@ -5,7 +5,7 @@ const Navbar = ({ title, iconClass }) => {
 	return (
 		<nav className='navbar'>
 			<h1>
-				<span className='text-primary' style={{ fontSize: '3rem' }}>
+				<span className='large text-primary'>
 					<i className={iconClass} />
 				</span>
 				{title}{' '}
