@@ -9,11 +9,9 @@ const About = () => {
 			<p>
 				<h2>Demonstrating the use of ~</h2>
 				<ul>
-					<li>
-						React Hooks (useState, useEffect, useContext, useReducer, useRef) in real
-						projects
-					</li>
+					<li>React Hooks (useState, useEffect, useContext, useReducer, useRef)</li>
 					<li>Context API & App Level State</li>
+					<li>Flux Pattern Using Context & useContext/useReducer Hooks</li>
 					<li>Working with Api's (async) using axios</li>
 					<li>React Fundamentals (Components, props, state, router)</li>
 					<li>Minimilistic Responsive UI Design with css & css-grid</li>
