@@ -15,12 +15,31 @@
 	padding: 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--primary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1rem;
 	line-height: 1.6;
 	background: var(--dark-color);
-	height: 100vh;
 	color: #fff;
 }
 
@@ -46,7 +65,7 @@ img {
 	max-width: 1100px;
 	margin: auto;
 	overflow: hidden;
-	padding: 0 2rem;
+	padding: 0 1rem;
 }
 
 /* Text Styles*/
@@ -116,10 +135,9 @@ img {
 
 /* Cards */
 .card {
-	box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+	border-radius: 1%;
 	padding: 1rem;
-	border: #fff 1px solid;
 	margin: 0.7rem 0;
 }
 
@@ -278,7 +296,7 @@ img {
 .btn-large-primary {
 	color: #fffafa;
 	border-radius: 20px;
-	border: var(--primary-color) 1px solid;
+	border: var(--light-color) 1px solid;
 	background-color: transparent;
 	padding: 0.3rem 6rem;
 }
