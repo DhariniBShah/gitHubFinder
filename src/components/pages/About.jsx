@@ -16,6 +16,7 @@ const About = () => {
 					<li>Context API & App Level State</li>
 					<li>Working with Api's (async) using axios</li>
 					<li>React Fundamentals (Components, props, state, router)</li>
+					<li>Minimilistic Responsive Flat-UI Design with css & css-grid</li>
 				</ul>
 			</p>
 			<br />
