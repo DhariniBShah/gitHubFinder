@@ -1,17 +1,22 @@
 import React, { Component, Fragment } from 'react';
-import Spinner from '../layout/Spinner';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import Spinner from '../layout/Spinner';
+import Repos from '../repos/Repos';
 
 class User extends Component {
 	componentDidMount() {
 		this.props.getUser(this.props.match.params.login);
+		this.props.getUserRepos(this.props.match.params.login);
 	}
 
 	static propTypes = {
 		loading: propTypes.bool,
 		user: propTypes.object.isRequired,
+		repos: propTypes.array.isRequired,
 		getUser: propTypes.func.isRequired,
+		getUserRepos: propTypes.func.isRequired,
 	};
 
 	render() {
@@ -31,14 +36,15 @@ class User extends Component {
 			hirable,
 		} = this.props.user;
 
-		const { loading } = this.props;
+		const { loading, repos } = this.props;
 
 		if (loading) return <Spinner />;
 		else
 			return (
 				<div className='container'>
-					<Link to='/' className='btn btn-sm btn-light'>
-						{'<< '}Back
+					<Link to='/' className='btn btn-dark'>
+						<i className='fas fa-angle-double-left'></i>
+						&nbsp; Back
 					</Link>
 					<div className='grid-2'>
 						<div className='all-center'>
@@ -58,7 +64,7 @@ class User extends Component {
 								Visit Github
 							</a>
 						</div>
-						<div className='card'>
+						<div className='simple-card'>
 							<h3>
 								Available To Hire:{' '}
 								{hirable ? (
@@ -110,6 +116,7 @@ class User extends Component {
 							<div className='badge badge-light'>Public Gists:{public_gists}</div>
 						</div>
 					</div>
+					<Repos repos={repos} />
 				</div>
 			);
 	}

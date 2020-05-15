@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-	color: #666;
+	color: #ccc;
 }
 
 ul {
@@ -139,6 +139,26 @@ img {
 
 .card:hover > h3 {
 	color: var(--dark-color);
+}
+
+.repo-card {
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+	padding: 1rem;
+	border-bottom: #fff 1px solid;
+	margin: 0.7rem 0;
+}
+
+.repo-card:hover > h3 > a {
+	cursor: pointer;
+	color: var(--primary-color);
+}
+
+.simple-card {
+	box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+	border-radius: 5px;
+	padding: 1rem;
+	border: #fff 1px solid;
+	margin: 0.7rem 0;
 }
 
 /* List */

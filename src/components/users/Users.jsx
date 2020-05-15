@@ -17,7 +17,7 @@ const Users = ({ users, loading }) => {
 
 const userStyle = {
 	display: 'grid',
-	gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+	gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
 	gridTemplateRows: '1fr',
 	gridGap: '1rem',
 };
