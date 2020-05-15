@@ -126,19 +126,23 @@ img {
 .card:hover {
 	cursor: pointer;
 	box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
-	background-color: #53565a;
-	transition: ease-out;
-	transition-duration: 1s;
+	background-color: silver;
 	border: #fff 3px solid;
 }
 
 .card:hover > img {
 	border: var(--primary-color) 3px solid;
-	transform: scale(1.1);
+	transform: scale(1.2);
 }
 
 .card:hover > h3 {
 	color: var(--dark-color);
+}
+
+.card:hover > .btn {
+	border: var(--light-color) 3px solid;
+	background-color: #000000;
+	color: #fff;
 }
 
 .repo-card {
