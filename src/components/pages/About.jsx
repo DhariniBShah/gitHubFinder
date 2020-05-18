@@ -3,32 +3,39 @@ const About = () => {
 	return (
 		<div className='container'>
 			<h1>About this App</h1>
-			<p>A simple webapp app to Search Github Users</p>
-			<p className='text-primary'>Version 1.0.1</p>
+			<h4>React app to Search Github Users</h4>
+			<h4>
+				<strong>
+					Created By <em>Dharini Shah</em>
+				</strong>
+			</h4>
+			<h4 className='text-primary'>Current Version: v1.0.2</h4>
 			<br />
 			<p>
 				<h2>Demonstrating the use of ~</h2>
 				<ul>
-					<li>React Hooks (useState, useEffect, useContext, useReducer, useRef)</li>
 					<li>Context API & App Level State</li>
+					<li>React Hooks (useState, useEffect, useContext, useReducer, useRef)</li>
 					<li>Flux Pattern Using Context & useContext/useReducer Hooks</li>
 					<li>Working with Api's (async) using axios</li>
-					<li>React Fundamentals (Components, props, state, router)</li>
+					<li>
+						React Fundamentals (Components, props, state, router [react-router-dom,
+						Switch, Route])
+					</li>
 					<li>Minimilistic Responsive UI Design with css & css-grid</li>
 				</ul>
 			</p>
 			<br />
 			<p>
-				<h2>Regarding previous version</h2>
-				v1.0.0 used Old School React Fundamentals, functional and class level
-				components to create this app! it was later refactored to use better
-				standards like React Hooks and Context
+				<h2> Previous Versions </h2>
+				<h4>v1.0.1</h4>
+				All class level components were refactored to functional components and
+				state management was done using <stron>React Hooks</stron>
 			</p>
-			<br />
 			<p>
-				<strong>
-					<em>- Created By Dharini Shah</em>
-				</strong>
+				<h4>v1.0.0</h4>
+				Used React-Fundamentals, functional and class-level components, lifecycle
+				methods,React-Router-Dom
 			</p>
 		</div>
 	);
