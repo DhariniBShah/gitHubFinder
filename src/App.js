@@ -9,6 +9,8 @@ import Alert from './components/layout/Alert';
 import About from './components/pages/About';
 import User from './components/users/User';
 
+import GithubState from './context/github/GithubState';
+
 import './App.css';
 
 const App = () => {
@@ -74,48 +76,50 @@ const App = () => {
 	};
 
 	return (
-		<Router>
-			<div className='App'>
-				<Navbar />
-				<Switch>
-					{/*rendering multiple components in Route*/}
-					<Route
-						exact
-						path='/'
-						render={() => (
-							<Fragment>
-								<div className='container'>
-									<Alert alert={alert} />
-									<Search
-										searchUsers={searchUsers}
-										clearUsers={clearUsers}
-										showClear={users.length > 0 ? true : false}
-										setAlert={showAlert}
-									/>
-									<Users users={users} loading={loading} />
-								</div>
-							</Fragment>
-						)}
-					/>
-					{/*rendering single component in Route*/}
-					<Route exact path='/about' component={About} />
-					<Route
-						exact
-						path='/user/:login'
-						render={(props) => (
-							<User
-								{...props}
-								getUser={getUser}
-								user={user}
-								getUserRepos={getUserRepos}
-								repos={repos}
-								loading={loading}
-							/>
-						)}
-					/>
-				</Switch>
-			</div>
-		</Router>
+		<GithubState>
+			<Router>
+				<div className='App'>
+					<Navbar />
+					<Switch>
+						{/*rendering multiple components in Route*/}
+						<Route
+							exact
+							path='/'
+							render={() => (
+								<Fragment>
+									<div className='container'>
+										<Alert alert={alert} />
+										<Search
+											searchUsers={searchUsers}
+											clearUsers={clearUsers}
+											showClear={users.length > 0 ? true : false}
+											setAlert={showAlert}
+										/>
+										<Users users={users} loading={loading} />
+									</div>
+								</Fragment>
+							)}
+						/>
+						{/*rendering single component in Route*/}
+						<Route exact path='/about' component={About} />
+						<Route
+							exact
+							path='/user/:login'
+							render={(props) => (
+								<User
+									{...props}
+									getUser={getUser}
+									user={user}
+									getUserRepos={getUserRepos}
+									repos={repos}
+									loading={loading}
+								/>
+							)}
+						/>
+					</Switch>
+				</div>
+			</Router>
+		</GithubState>
 	);
 };
 
