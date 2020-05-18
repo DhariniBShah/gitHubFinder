@@ -21,8 +21,8 @@ const About = () => {
 			<p>
 				<h2>Regarding previous version</h2>
 				v1.0.0 used Old School React Fundamentals, functional and class level
-				components to create this app! it was later refactored to use React Hooks
-				and Context Api to comply with industry standards
+				components to create this app! it was later refactored to use better
+				standards like React Hooks and Context
 			</p>
 			<br />
 			<p>

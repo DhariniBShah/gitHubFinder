@@ -1,63 +1,58 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 
-class Search extends Component {
-	state = {
-		text: '',
+const Search = ({ searchUsers, clearUsers, showClear, setAlert }) => {
+	const [text, setText] = useState('');
+
+	const onChange = (event) => {
+		setText({ text: event.target.value });
 	};
 
-	static propTypes = {
-		searchUsers: propTypes.func.isRequired,
-		clearUsers: propTypes.func.isRequired,
-		showClear: propTypes.bool.isRequired,
-		setAlert: propTypes.func.isRequired,
-	};
-
-	onChange = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
-	};
-
-	onSubmit = (event) => {
+	const onSubmit = (event) => {
 		event.preventDefault();
-		if (this.state.text === '') {
-			this.props.setAlert('Please enter something', 'danger');
+		if (text === '') {
+			setAlert('Please enter something', 'danger');
 		} else {
-			this.props.searchUsers(this.state.text);
-			this.setState({ text: '' });
+			searchUsers(text);
+			setText({ text: '' });
 		}
 	};
+	return (
+		<div className='container all-center'>
+			<form
+				onSubmit={onSubmit}
+				className='form'
+				style={{ display: 'flex', width: '100%' }}
+			>
+				<input
+					type='text'
+					name='text'
+					placeholder='Search..'
+					style={{ display: 'flex-start' }}
+					value={text}
+					onChange={onChange}
+				/>
+				<input
+					type='submit'
+					value='Search'
+					className='btn btn-primary'
+					style={{ display: 'flex-end' }}
+				/>
+			</form>
+			{showClear && (
+				<button className='btn btn-large-primary' onClick={clearUsers}>
+					Clear
+				</button>
+			)}
+		</div>
+	);
+};
 
-	render() {
-		const { clearUsers, showClear } = this.props;
-		return (
-			<div className='container all-center'>
-				<form
-					onSubmit={this.onSubmit}
-					className='form'
-					style={{ display: 'flex', width: '100%' }}
-				>
-					<input
-						type='text'
-						name='text'
-						placeholder='Search..'
-						style={{ display: 'flex-start' }}
-						value={this.state.text}
-						onChange={this.onChange}
-					/>
-					<input
-						type='submit'
-						value='Search'
-						className='btn btn-primary'
-						style={{ display: 'flex-end' }}
-					/>
-				</form>
-				{showClear && (
-					<button className='btn btn-large-primary' onClick={clearUsers}>
-						Clear
-					</button>
-				)}
-			</div>
-		);
-	}
-}
 export default Search;
+
+Search.propTypes = {
+	searchUsers: propTypes.func.isRequired,
+	clearUsers: propTypes.func.isRequired,
+	showClear: propTypes.bool.isRequired,
+	setAlert: propTypes.func.isRequired,
+};
