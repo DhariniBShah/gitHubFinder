@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from 'prop-types';
 
 import RepoItem from './RepoItem';
 
@@ -8,6 +7,3 @@ const Repos = ({ repos }) => {
 };
 
 export default Repos;
-Repos.propTypes = {
-	repos: propTypes.array.isRequired,
-};
